@@ -18,7 +18,7 @@ function TodoItem({ todo}) {
 
   return (
       <div
-          className={`flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border border-gray-100  text-black ${
+          className={`flex items-center gap-3 p-3  rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border border-gray-100  text-black ${
               todo.completed ? "bg-[#c6e9a7]" : "bg-[#ccbed7]"
           }`}
       >
