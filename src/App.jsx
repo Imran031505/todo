@@ -49,25 +49,33 @@ function App() {
 
   return (
     <TodoProvider value={{todos, addTodo, updateTodo, deleteTodo, toggleComplete}}>
-      <div className="bg-[#172842] min-h-screen py-8">
-                <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
-                    <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
-                    <div className="mb-4">
-                        {/* Todo form goes here */} 
-                        <TodoForm />
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-6 md:p-12">
+    <div className="max-w-xl mx-auto">
+    <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">
+        My Todo List
+      </h1>
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl p-8 mb-8 transition-all duration-300 hover:shadow-2xl">
+            <TodoForm />
+        
+        <div className="space-y-2">
+            {todos.length > 0 ? (
+                todos.map((todo) => (
+                  <div
+                  key={todo.id}
+                  className="transition-all duration-300 hover:-translate-y-1"
+                >
+                    <TodoItem key={todo.id} todo={todo} />
                     </div>
-                    <div className="flex flex-wrap gap-y-3">
-                        {/*Loop and Add TodoItem here */}
-                        {todos.map((todo) => (
-                          <div key={todo.id}
-                          className='w-full'
-                          >
-                            <TodoItem todo={todo} />
-                          </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+                ))
+            ) : (
+                <p className="text-center text-gray-500">No todos yet. Add one to get started!</p>
+            )}
+        </div>
+        </div>
+    </div>
+    
+</div>
+
     </TodoProvider>
   )
 }

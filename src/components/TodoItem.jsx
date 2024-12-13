@@ -18,10 +18,11 @@ function TodoItem({ todo}) {
 
   return (
       <div
-          className={`flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black ${
+          className={`flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border border-gray-100  text-black ${
               todo.completed ? "bg-[#c6e9a7]" : "bg-[#ccbed7]"
           }`}
       >
+         <div className="relative"></div>
           <input
               type="checkbox"
               className="cursor-pointer"
@@ -38,6 +39,7 @@ function TodoItem({ todo}) {
               readOnly={!isTodoEditable}
           />
           {/* Edit, Save Button */}
+              
           <button
               className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
               onClick={() => {

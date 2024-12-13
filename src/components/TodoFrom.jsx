@@ -15,18 +15,22 @@ function TodoForm() {
     }
 
   return (
-      <form onSubmit={add}  className="flex">
-          <input
-              type="text"
-              placeholder="Write Todo..."
-              className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
-              value={todo}
-              onChange={(e) => setTodo(e.target.value)}
-          />
-          <button type="submit" className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0">
-              Add
-          </button>
-      </form>
+    <form onSubmit={add} className="flex gap-3 pt-3 pb-5 ">
+    <input
+        type="text"
+        placeholder="Add a new todo..."
+        className="flex-1 px-6 py-3 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-200 focus:border-green-400 transition-all duration-300 placeholder:text-gray-400"
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
+    />
+    <button
+        type="submit"
+        className="px-6 py-3 text-white bg-gradient-to-r from-green-400 to-emerald-500 rounded-xl hover:from-green-500 hover:to-emerald-600 focus:outline-none focus:ring-2 focus:ring-green-400 transform transition-all duration-300 hover:shadow-lg"
+    >
+        Add
+    </button>
+</form>
+
   );
 }
 
