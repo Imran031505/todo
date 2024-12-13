@@ -15,11 +15,11 @@ function TodoForm() {
     }
 
   return (
-    <form onSubmit={add} className="flex gap-3 pt-3 pb-5 ">
+    <form onSubmit={add} className="flex flex-col sm:flex-row gap-3 pt-3 pb-5">
     <input
         type="text"
         placeholder="Add a new todo..."
-        className="flex-1 px-6 py-3 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-200 focus:border-green-400 transition-all duration-300 placeholder:text-gray-400"
+        className="w-full sm:flex-1 px-6 py-3 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-200 focus:border-green-400 transition-all duration-300 placeholder:text-gray-400"
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
     />
@@ -30,6 +30,7 @@ function TodoForm() {
         Add
     </button>
 </form>
+
 
   );
 }
